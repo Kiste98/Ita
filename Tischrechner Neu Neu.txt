@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Trechnerneueneu
+{
+    class CRechner
+    {
+        public decimal add(decimal decZahl1, decimal decZahl2)
+        {
+            return (decZahl1 + decZahl2);
+        }
+        public decimal sub(decimal decZahl1, decimal decZahl2)
+        {
+            return (decZahl1 - decZahl2);
+        }
+        public decimal mult(decimal decZahl1, decimal decZahl2)
+        {
+            return (decZahl1 * decZahl2);
+        }
+        public decimal div(decimal decZahl1, decimal decZahl2)
+        {
+            return (decZahl1 / decZahl2);
+        }
+            public decimal sqrt(decimal decZahl1)
+        {
+            double dZahl;
+            double derg;
+            decimal decErg;
+            dZahl = Convert.ToDouble(decZahl1);
+            derg = (Math.Sqrt(dZahl));
+            decErg = Convert.ToDecimal(derg);
+            return (decErg);
+            
+        }
+    }
+}

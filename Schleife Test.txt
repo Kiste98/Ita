@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace SchleifenTest1
+{
+    public partial class Form1 : Form
+    {
+        const int iTextBoxAnz = 8;
+        int iTextBoxIndex;
+        string strTextBoxName;
+        Control TextBoxRes;
+
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void btn_Reset_Click(object sender, EventArgs e)
+        {
+            for (iTextBoxIndex = 1; iTextBoxIndex < iTextBoxAnz + 1; iTextBoxIndex++)
+            {
+                strTextBoxName = "textBox" + iTextBoxIndex;
+                TextBoxRes = Controls[strTextBoxName];
+                TextBoxRes.Text = Convert.ToString(iTextBoxIndex);
+                TextBoxRes.Enabled = false;
+            }
+
+            iTextBoxIndex = 1;
+        }
+
+        private void btn_Start_Click(object sender, EventArgs e)
+        {
+            // Bei jedem Click ein Feld  aktivieren
+            strTextBoxName = "textBox" + iTextBoxIndex;
+            TextBoxRes = Controls[strTextBoxName];
+            TextBoxRes.Enabled = true;
+            iTextBoxIndex++;
+            if (iTextBoxIndex >= iTextBoxAnz)
+            {
+                iTextBoxIndex = iTextBoxAnz;
+            }
+        }
+    }
+}
